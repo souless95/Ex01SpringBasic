@@ -51,29 +51,25 @@ $(function (){
 			requestMapping시작페이지 바로가기
 		</a>
 	</li>
-	<hr>	
+	<hr>
 	<!-- FormController.java -->
 	<h3>form값 처리하기</h3>
 	<li>
 		<a href="./form/servletRequest?id=sol&pw=1234" target="_blank">
 		HttpServletRequest로 폼값받기</a>
 	</li>
-	<hr>	
 	<li>
 		<a href="./form/requestParam.do?id=sol&pw=1234&name=정은솔&email=sol@gmail.com" target="_blank">
 		@requestParam 어노테이션으로 폼값받기</a>
 	</li>
-	<hr>	
 	<li>
 		<a href="./form/commandObjGet.do?id=sol&pw=1234&name=정은솔&email=sol@gmail.com" target="_blank">
 		커맨드(Command)객체로 한번에 폼값받기</a>
 	</li>
-	<hr>
 	<li>
 		<a href="./form/sol/정은솔" target="_blank">
 		pathVariable 어노테이션으로 폼값받기</a>
 	</li>
-	<hr>
 	<li>
 		<a href="./form/modelAttribute.do?id=korea&pw=1234&name=홍길동&email=hong@gildong.com" target="_blank">
 		@ModelAttribute 사용하기</a>
@@ -87,17 +83,51 @@ $(function (){
 	<hr>
 	<h3>DI(Dependency Injection) : 의존성 주입</h3>
 	
-	<li><a href="di/mydi1.do" targert="_blank">
+	<li><a href="di/mydi1.do" target="_blank">
 		XML설정파일을 통한 빈 생성1(생성자와 setter)
 	</a></li>
 	
-	<li><a href="di/mydi2.do" targert="_blank">
+	<li><a href="di/mydi2.do" target="_blank">
 		XML설정파일을 통한 빈 생성2(다양한 멤버변수)
 	</a></li>
 	
-	<li><a href="di/mydi3.do" targert="_blank">
+	<li><a href="di/mydi3.do" target="_blank">
 		어노테이션을 통한 빈 생성
 	</a></li>
+	<hr>	
+	<h3>Environment 객체를 이용한 외부파일 참조하기</h3>
+	<li>
+		<a href="environment/main1.do" target="_blank">
+			외부파일 참조하기1(Environment객체 사용)
+ 		</a>
+	</li>
+	<li>
+		<a href="environment/main2.do" target="_blank">
+			외부파일 참조하기2(XML 설정파일 사용)
+		</a>
+	</li>
+	<li>
+		<a href="environment/main3.do" target="_blank">
+			외부파일 참조하기3(어노테이션 사용)
+		</a>
+	</li>  
+	<hr>
+	<h3>파일업로드</h3>
+	<li>
+		<a href="fileUpload/uploadPath.do" target="_blank">
+			upload폴더의 물리적 경로 확인하기
+		</a>
+	</li>
+	<li>
+		<a href="fileUpload/uploadForm.do" target="_blank">
+			파일업로드 폼
+		</a>
+	</li>
+	<li>
+		<a href="fileUpload/uploadList.do" target="_blank">
+			파일목록보기
+		</a>
+	</li>
 </div>
 </body>
 </html>
