@@ -128,6 +128,18 @@ $(function (){
 			파일목록보기
 		</a>
 	</li>
+	<hr>
+	<h2>AOP(Aspect Origented Programming)</h2>
+	<li>
+		<a href="./aop/main1.do" target="_blank">
+			AOP-XML설정파일 이용
+		</a>
+	</li>
+	<li>
+		<a href="./aop/main2.do" target="_blank">
+			AOP-어노테이션 이용
+		</a>
+	</li>
 </div>
 </body>
 </html>

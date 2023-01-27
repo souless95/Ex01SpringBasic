@@ -9,6 +9,8 @@
 	<configs>
 		<config>src/main/resources/my_di1.xml</config>
 		<config>src/main/resources/AbsAppContext.xml</config>
+		<config>src/main/resources/AOPAppCtx1.xml</config>
+		<config>src/main/resources/AOPAppCtx2.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>

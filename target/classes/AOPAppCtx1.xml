@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- XML설정 파일을 생성할때 AOP기능 사용을 위해 네임스페이스를 추가해야 한다.
+	생성시 체크하거나 생성 후 아래 Namespaces탭에서 추가하면 된다.
+	파일 생성후 xmlns:aop 항목이 추가되었는지 확인한다. -->
+
+<!-- 공통기능으로 사용할 클래스 -->
+<bean id="commonAOP1" class="aop.CommonAOP1"></bean>
+
+	<!-- AOP(공통기능) 설정 -->
+	<aop:config>
+		<!-- 공통기능설정 : 앞에서 생성한 commonAOP1 빈을 참조하고,
+			아이디는 myAOP1로 설정한다. -->
+		<aop:aspect id="myAOP1" ref="commonAOP1">
+			<!-- 포인트컷의 범위를 지정한다. 
+				해당 범위는 aop패키지의 모든 클래스에 정의된 메서드를 대상으로 공통기능을 적용하겠다는 의미이다. -->
+			<aop:pointcut expression="within(aop.*)" id="myMethod"/>
+			<!-- Advice는 "around"타입으로 지정하고, 
+				이때 runTimeAOP 메서드를 공통 기능으로 사용하겠다는 선언이다. -->
+			<aop:around pointcut-ref="myMethod" method="runTimeAOP"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<!-- 빈 생성 : SalesManVO클래스를 통해 객체를 생성하고 이때 setter를 통해 초기화한다. -->
+	<bean id="salesMan" class="aop.SalesManVO">
+		<property name="name" value="장그래"></property>
+		<property name="age" value="35"></property>
+		<property name="job">
+			<value>영업3팀</value>
+		</property>
+		<property name="salary">
+			<value>300</value>
+		</property>
+	</bean>
+</beans>
